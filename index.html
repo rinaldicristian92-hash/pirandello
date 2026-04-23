@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>L'Archivio Pirandello — Vita, Poetica, Opere</title>
+<meta name="description" content="Un portfolio editoriale su Luigi Pirandello: identità frammentata, maschere, umorismo e le opere che hanno cambiato il Novecento." />
+<meta property="og:title" content="L'Archivio Pirandello" />
+<meta property="og:description" content="Vita, poetica e opere di Luigi Pirandello in chiave editoriale." />
+<meta property="og:image" content="assets/pirandello-hero.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --background:oklch(0.975 0.003 80);
+    --foreground:oklch(0.14 0.005 60);
+    --muted:oklch(0.93 0.005 80);
+    --muted-foreground:oklch(0.45 0.008 60);
+    --accent:oklch(0.55 0.14 28);
+    --border:oklch(0.86 0.006 70);
+  }
+  html,body{background:var(--background);color:var(--foreground);font-family:"Instrument Sans",system-ui,sans-serif;font-feature-settings:"ss01","ss02","kern";-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  .font-serif{font-family:"Fraunces","Instrument Serif",Georgia,serif;font-optical-sizing:auto;}
+  .font-italic{font-family:"Instrument Serif","Fraunces",Georgia,serif;font-style:italic;}
+  .text-balance{text-wrap:balance;}
+  .text-pretty{text-wrap:pretty;}
+  .text-foreground{color:var(--foreground);} .text-background{color:var(--background);}
+  .text-muted-foreground{color:var(--muted-foreground);}
+  .text-accent{color:var(--accent);}
+  .bg-background{background:var(--background);} .bg-foreground{background:var(--foreground);}
+  .bg-muted{background:var(--muted);}
+  .border-border{border-color:var(--border);} .border-foreground{border-color:var(--foreground);} .border-accent{border-color:var(--accent);}
+  .divide-border>*+*{border-color:var(--border);}
+  .editorial-rule{background-image:linear-gradient(to right,var(--foreground) 50%,transparent 50%);background-size:8px 1px;background-repeat:repeat-x;background-position:center;height:1px;}
+  .grain{position:relative;}
+  .grain::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:multiply;}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ticker{animation:ticker 40s linear infinite;}
+  @keyframes reveal-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{animation:reveal-up .9s cubic-bezier(.2,.7,.2,1) both;}
+  ::selection{background:var(--foreground);color:var(--background);}
+  .nav-link{color:var(--muted-foreground);transition:color .2s;}
+  .nav-link:hover,.nav-link.active{color:var(--foreground);}
+  .tab-btn.active{background:var(--foreground);color:var(--background);}
+  .first-letter-drop p:first-of-type::first-letter{font-family:"Fraunces",serif;font-size:5rem;font-weight:900;float:left;margin-right:.75rem;line-height:.85;margin-top:.25rem;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border px-6 py-4">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-12 items-center">
+    <div class="col-span-3"><a href="#top" class="font-serif font-black tracking-tighter text-2xl uppercase">L'Archivio</a></div>
+    <div class="col-span-6 flex justify-center gap-10 text-[11px] font-semibold tracking-[0.2em] uppercase">
+      <a href="#vita" class="nav-link">Vita</a>
+      <a href="#poetica" class="nav-link">Poetica</a>
+      <a href="#opere" class="nav-link">Opere</a>
+    </div>
+    <div class="col-span-3 text-right text-[11px] tabular-nums font-medium text-muted-foreground">1867 — 1936</div>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- TICKER -->
+<div class="border-b border-foreground overflow-hidden bg-foreground text-background">
+  <div class="flex whitespace-nowrap ticker py-2 text-[11px] font-semibold tracking-[0.3em] uppercase">
+    <div class="flex shrink-0 items-center gap-12 pr-12">
+      <span>Edizione Critica</span><span>·</span><span>Agrigento 1867 — Roma 1936</span><span>·</span><span>Premio Nobel per la Letteratura 1934</span><span>·</span><span>Uno, Nessuno e Centomila</span><span>·</span><span>La vita è un flusso continuo</span><span>·</span><span>Vedere il tragico dietro il comico</span><span>·</span>
+    </div>
+    <div class="flex shrink-0 items-center gap-12 pr-12">
+      <span>Edizione Critica</span><span>·</span><span>Agrigento 1867 — Roma 1936</span><span>·</span><span>Premio Nobel per la Letteratura 1934</span><span>·</span><span>Uno, Nessuno e Centomila</span><span>·</span><span>La vita è un flusso continuo</span><span>·</span><span>Vedere il tragico dietro il comico</span><span>·</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO MASTHEAD -->
+<header class="px-6 pt-20 pb-16 border-b border-foreground grain">
+  <div class="max-w-screen-2xl mx-auto">
+    <div class="flex items-center justify-between text-[11px] tracking-widest uppercase text-muted-foreground mb-16">
+      <span>Vol. I · Saggio Critico</span>
+      <span class="editorial-rule flex-1 mx-8 max-w-md"></span>
+      <span>No. 001</span>
+    </div>
+    <div class="grid grid-cols-12 gap-8 items-end">
+      <div class="col-span-12 lg:col-span-8 reveal">
+        <p class="text-[11px] font-bold tracking-[0.4em] uppercase mb-6 text-accent">Un ritratto editoriale</p>
+        <h1 class="font-serif font-black leading-[0.82] tracking-tighter text-balance" style="font-size:clamp(3.5rem,11vw,12rem)">
+          UNO,<br>NESSUNO<br><span class="italic font-normal">e</span> CENTOMILA.
+        </h1>
+      </div>
+      <div class="col-span-12 lg:col-span-4 pb-6 space-y-8 reveal">
+        <p class="font-italic text-2xl leading-snug text-pretty">«La verità? È soltanto quella che ci creiamo noi.»</p>
+        <div class="flex items-center gap-3">
+          <span class="size-2.5 rounded-full" style="background:var(--accent)"></span>
+          <span class="text-[11px] font-semibold tracking-widest uppercase">Luigi Pirandello · 1867 — 1936</span>
+        </div>
+        <p class="text-sm leading-relaxed text-muted-foreground">Drammaturgo, romanziere, Premio Nobel. Architetto della crisi dell'identità moderna: l'uomo non è più un individuo, ma un aggregato di maschere.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO IMAGE + APERTURA -->
+<section class="border-b border-border">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-12">
+    <div class="col-span-12 lg:col-span-7 border-r border-border">
+      <img src="assets/pirandello-hero.jpg" alt="Ritratto di Luigi Pirandello in bianco e nero" class="w-full h-full object-cover aspect-[4/5] grayscale contrast-125">
+    </div>
+    <div class="col-span-12 lg:col-span-5 p-10 md:p-16 flex flex-col justify-between gap-12">
+      <div>
+        <p class="text-[11px] font-bold tracking-[0.3em] uppercase mb-8 text-muted-foreground">Apertura</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-black leading-[1.05] mb-8 text-balance">Un uomo guarda la propria tomba. E sorride.</h2>
+        <p class="text-base leading-relaxed text-muted-foreground mb-4">È il 1904 quando Pirandello pubblica <em>Il fu Mattia Pascal</em>. Un romanzo in cui un uomo, creduto morto per errore, prova a ricominciare da capo — e scopre che fuori dalla forma sociale non c'è libertà, ma un vuoto.</p>
+        <p class="text-base leading-relaxed text-muted-foreground">Da quell'intuizione nasce un'intera filosofia: ogni identità è una costruzione collettiva. Siamo <em>uno</em> per noi, <em>centomila</em> per gli altri, e in fondo <em>nessuno</em>.</p>
+      </div>
+      <a href="#vita" class="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.3em] uppercase border-b border-foreground pb-2 self-start hover:text-accent">Leggi la biografia <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="px-6 py-24 border-b border-border">
+  <div class="max-w-screen-2xl mx-auto">
+    <div class="flex items-center gap-4 mb-12">
+      <span class="font-serif text-4xl font-black text-muted-foreground/30">I</span>
+      <div class="flex-1 h-px bg-border"></div>
+      <span class="text-[11px] font-bold tracking-[0.3em] uppercase">Il Manifesto</span>
+    </div>
+    <div class="grid grid-cols-12 gap-8">
+      <h2 class="col-span-12 lg:col-span-5 font-serif text-4xl md:text-5xl font-black leading-tight mb-8 text-balance">Tre idee che hanno rotto il Novecento.</h2>
+      <div class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="border-t border-foreground pt-6"><span class="text-[11px] font-bold tracking-widest text-muted-foreground tabular-nums">01</span><h3 class="font-serif text-2xl font-black mt-3 mb-3">Il flusso</h3><p class="text-sm leading-relaxed text-muted-foreground">La vita è un movimento perenne. Fissarsi in una forma significa morire dentro.</p></article>
+        <article class="border-t border-foreground pt-6"><span class="text-[11px] font-bold tracking-widest text-muted-foreground tabular-nums">02</span><h3 class="font-serif text-2xl font-black mt-3 mb-3">La maschera</h3><p class="text-sm leading-relaxed text-muted-foreground">Famiglia e lavoro non proteggono: imprigionano. Recitiamo ruoli che non ci appartengono.</p></article>
+        <article class="border-t border-foreground pt-6"><span class="text-[11px] font-bold tracking-widest text-muted-foreground tabular-nums">03</span><h3 class="font-serif text-2xl font-black mt-3 mb-3">L'umorismo</h3><p class="text-sm leading-relaxed text-muted-foreground">Non il comico, ma il sentimento del contrario: vedere il dolore dietro il ridicolo.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMMERSIVE QUOTE -->
+<section class="relative px-6 py-32 text-background overflow-hidden" style="background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85)),url('assets/mirror-fragments.jpg');background-size:cover;background-position:center;">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-[11px] font-bold tracking-[0.4em] uppercase mb-12 opacity-60">Frammento · N° 47</p>
+    <p class="font-italic text-3xl md:text-5xl leading-[1.2] text-balance">«Imparerai a tue spese che nel lungo tragitto della vita incontrerai tante maschere e pochi volti.»</p>
+    <p class="mt-12 text-[11px] tracking-[0.3em] uppercase opacity-60">Uno, nessuno e centomila · 1926</p>
+  </div>
+</section>
+
+<!-- ============== VITA ============== -->
+<section id="vita" class="border-b border-foreground">
+  <header class="px-6 pt-24 pb-12 border-b border-foreground">
+    <div class="max-w-screen-2xl mx-auto">
+      <p class="text-[11px] font-bold tracking-[0.4em] uppercase mb-6 text-accent">Capitolo Primo · La Biografia</p>
+      <h2 class="font-serif font-black leading-[0.85] tracking-tighter text-balance max-w-5xl" style="font-size:clamp(3rem,9vw,9rem)">Il figlio del Caos.</h2>
+      <p class="mt-12 font-italic text-2xl md:text-3xl leading-snug max-w-3xl text-pretty">Una miniera che si allaga, una donna che impazzisce, un uomo che si accorge di non essere mai stato se stesso.</p>
+    </div>
+  </header>
+
+  <section class="max-w-screen-2xl mx-auto px-6 py-16 grid grid-cols-12 gap-12 border-b border-border">
+    <div class="col-span-12 lg:col-span-5">
+      <img src="assets/pirandello-hero.jpg" alt="Ritratto di Luigi Pirandello" class="w-full aspect-[3/4] object-cover grayscale contrast-125">
+      <p class="text-[11px] tracking-widest uppercase text-muted-foreground mt-4">Fig. 01 · Ritratto d'archivio</p>
+    </div>
+    <div class="col-span-12 lg:col-span-6 lg:col-start-7 pt-8">
+      <div class="flex items-center gap-4 mb-12"><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">Il fatto che cambiò tutto</span></div>
+      <div class="space-y-6 text-lg leading-relaxed font-serif first-letter-drop">
+        <p>Luigi Pirandello era sposato con una donna molto ricca. La ricchezza della sua famiglia veniva da una miniera di zolfo in Sicilia. Un giorno, però, accadde un disastro: la miniera si allagò, e la famiglia perse tutto.</p>
+        <p>La moglie, Antonietta, non resse il trauma. Iniziò a soffrire di una forma di follia — sospetti, paranoie, crisi violente — che avrebbe accompagnato Pirandello per decenni, fino al suo ricovero.</p>
+        <p class="text-accent italic">Vedere la propria vita cambiare in una notte. Vedere la persona amata diventare estranea, irriconoscibile. Fu da qui che Pirandello capì che nulla è fisso, e che ogni identità è una forma fragile sulla superficie di un abisso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 border-b border-border">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-12"><span class="font-serif text-4xl font-black text-muted-foreground/30">II</span><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">Cronologia</span></div>
+      <ol class="relative border-l-2 border-foreground pl-10 space-y-16" id="timeline"></ol>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="max-w-3xl mx-auto">
+      <blockquote class="relative py-12">
+        <span class="absolute -top-2 -left-2 text-[120px] font-serif font-black leading-none select-none" style="color:rgba(0,0,0,.05)" aria-hidden>"</span>
+        <p class="font-italic text-2xl md:text-3xl leading-relaxed relative z-10 max-w-2xl">Io sono figlio del Caos; e non allegoricamente, ma in giusta realtà, perché son nato in una nostra campagna, che trovasi presso ad un intricato bosco denominato, in forma dialettale, Càvusu.</p>
+        <cite class="block mt-6 text-[11px] font-semibold tracking-widest uppercase text-muted-foreground not-italic">— Luigi Pirandello · Frammento di autobiografia</cite>
+      </blockquote>
+    </div>
+  </section>
+</section>
+
+<!-- ============== POETICA ============== -->
+<section id="poetica" class="border-b border-foreground">
+  <header class="px-6 pt-24 pb-12 border-b border-foreground">
+    <div class="max-w-screen-2xl mx-auto">
+      <p class="text-[11px] font-bold tracking-[0.4em] uppercase mb-6 text-accent">Capitolo Secondo · Il Pensiero</p>
+      <h2 class="font-serif font-black leading-[0.85] tracking-tighter text-balance max-w-5xl" style="font-size:clamp(3rem,9vw,9rem)">Il tragico<br>dietro il comico.</h2>
+      <p class="mt-12 font-italic text-2xl md:text-3xl leading-snug max-w-3xl text-pretty">Vitalismo, maschere, umorismo. Tre strumenti per smontare la realtà e scoprire che non si riaccende.</p>
+    </div>
+  </header>
+
+  <section class="px-6 py-24 border-b border-border">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-12">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="flex items-center gap-4 mb-12"><span class="font-serif text-4xl font-black text-muted-foreground/30">01</span><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">Il Flusso</span></div>
+        <h3 class="font-serif text-5xl font-black leading-[1.05] mb-8 text-balance">La vita è un fiume. La forma è una diga.</h3>
+      </div>
+      <div class="col-span-12 lg:col-span-6 lg:col-start-7 space-y-6 font-serif text-lg leading-relaxed">
+        <p>Pirandello prende il <em>vitalismo</em> dal filosofo Henri Bergson: la realtà è un divenire incessante, un flusso continuo di trasformazioni. Ogni essere passa da uno stato all'altro, e tutto ciò che si stacca da questo flusso è destinato a morire.</p>
+        <p>Ma l'uomo moderno vive al contrario. Si costruisce forme — nome, lavoro, famiglia, nazione — per resistere al cambiamento. Queste forme lo proteggono e insieme lo imprigionano. Fuori dalla forma c'è libertà assoluta, ma anche vuoto. Dentro la forma c'è identità, ma anche morte interiore.</p>
+        <p class="text-accent italic">Il paradosso pirandelliano: non possiamo vivere senza forme, ma non possiamo davvero vivere dentro di esse.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative px-6 py-32 border-b border-border text-background" style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)),url('assets/mask-manuscript.jpg');background-size:cover;background-position:center;">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-12">
+      <div class="col-span-12 lg:col-span-7">
+        <p class="text-[11px] font-bold tracking-[0.3em] uppercase mb-6 opacity-60">02 · Le Maschere</p>
+        <h3 class="font-serif text-5xl md:text-6xl font-black leading-[1.05] mb-8 text-balance">Tante maschere. Pochi volti.</h3>
+        <div class="space-y-6 font-serif text-lg leading-relaxed opacity-90 max-w-2xl">
+          <p>Ognuno di noi porta maschere diverse a seconda di chi ha davanti. Siamo figli con i genitori, colleghi in ufficio, amanti nella notte. Ma sotto tutte queste maschere, chi siamo davvero?</p>
+          <p>Pirandello demolisce le due grandi istituzioni borghesi: la famiglia e il lavoro. La famiglia non è il nido protettivo di Pascoli, ma un luogo di tensioni, ipocrisie e rancori. Il lavoro non realizza l'uomo, lo aliena, lo riduce a una funzione.</p>
+          <p class="italic">Questa critica resta puramente negativa. Non ci sono soluzioni, non ci sono alternative. Solo la lucida consapevolezza della prigione.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 border-b border-border">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-12"><span class="font-serif text-4xl font-black text-muted-foreground/30">03</span><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">L'Umorismo</span></div>
+      <h3 class="font-serif text-5xl md:text-6xl font-black leading-[1.05] mb-12 text-balance">Storia di una vecchia signora imbellettata.</h3>
+      <div class="space-y-8 font-serif text-lg leading-relaxed">
+        <p><em>Saggio sull'Umorismo</em>, 1908. Pirandello racconta un esempio semplice. Vedo passare una vecchia signora coi capelli tinti, il volto truccato in modo eccessivo, vestita come una ragazzina. Rido.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-y-2 border-foreground not-italic">
+          <div><p class="text-[11px] font-bold tracking-[0.3em] uppercase mb-4">Avvertimento del contrario</p><p class="text-base leading-relaxed" style="font-family:'Instrument Sans',sans-serif">Percepisco immediatamente il contrasto tra ciò che è e ciò che dovrebbe essere. Questo genera il riso. È il <em>comico</em>.</p></div>
+          <div><p class="text-[11px] font-bold tracking-[0.3em] uppercase mb-4 text-accent">Sentimento del contrario</p><p class="text-base leading-relaxed" style="font-family:'Instrument Sans',sans-serif">Poi interviene la riflessione. Forse quella signora soffre a pararsi così. Lo fa nell'illusione di trattenere l'amore di un marito più giovane. Non rido più. È l'<em>umorismo</em>.</p></div>
+        </div>
+        <p class="text-accent italic">L'originalità pirandelliana: mostrare il tragico dietro il comico. Il cuore della sua poetica è questo rovesciamento dello sguardo, che diventa comprensione della fragilità umana.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 border-b border-border">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="flex items-center gap-4 mb-12"><span class="font-serif text-4xl font-black text-muted-foreground/30">IV</span><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">Glossario</span></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-border" style="background:var(--border)" id="glossario"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============== OPERE ============== -->
+<section id="opere">
+  <header class="px-6 pt-24 pb-12 border-b border-foreground">
+    <div class="max-w-screen-2xl mx-auto">
+      <p class="text-[11px] font-bold tracking-[0.4em] uppercase mb-6 text-accent">Capitolo Terzo · Le Quattro Opere</p>
+      <h2 class="font-serif font-black leading-[0.85] tracking-tighter text-balance max-w-5xl" style="font-size:clamp(3rem,9vw,9rem)">Quattro libri.<br>Una sola domanda.</h2>
+      <p class="mt-12 font-italic text-2xl md:text-3xl leading-snug max-w-3xl text-pretty">Dal romanzo dell'identità perduta al teatro dei personaggi immortali. La mappa dell'opera pirandelliana.</p>
+    </div>
+  </header>
+
+  <section class="px-6 py-16 border-b border-border">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="flex items-center gap-4 mb-12"><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">Indice</span></div>
+      <div id="opere-tabs" class="grid grid-cols-1 md:grid-cols-4 gap-0 border-t border-l border-border"></div>
+    </div>
+  </section>
+
+  <article id="opera-current" class="border-b border-border"></article>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-foreground mt-32">
+  <div class="max-w-screen-2xl mx-auto px-6 py-16 grid grid-cols-12 gap-8">
+    <div class="col-span-12 md:col-span-5">
+      <p class="text-[11px] font-bold tracking-[0.3em] uppercase mb-4">Archivio Digitale</p>
+      <p class="text-sm leading-relaxed text-muted-foreground italic max-w-sm">Un progetto dedicato alla conservazione e alla riscoperta della filosofia pirandelliana nell'era dell'identità frammentata.</p>
+    </div>
+    <div class="col-span-12 md:col-span-4 md:col-start-7 flex gap-16">
+      <div class="space-y-3 text-[11px] font-semibold tracking-widest uppercase">
+        <p class="text-muted-foreground mb-4">Esplora</p>
+        <a href="#vita" class="block hover:text-accent">Vita</a>
+        <a href="#poetica" class="block hover:text-accent">Poetica</a>
+        <a href="#opere" class="block hover:text-accent">Opere</a>
+      </div>
+      <div class="space-y-3 text-[11px] font-semibold tracking-widest uppercase">
+        <p class="text-muted-foreground mb-4">Archivio</p>
+        <p class="tabular-nums">Agrigento — Roma</p>
+        <p>Nobel 1934</p>
+      </div>
+    </div>
+    <div class="col-span-12 mt-12 pt-8 border-t border-border flex justify-between items-center text-[10px] tracking-widest uppercase text-muted-foreground">
+      <span>&copy; MCMXXXVI — Archivio Pirandello</span>
+      <span>Vedere · Sentire · Sparire</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const timeline=[
+  {year:"1867",title:"Agrigento",body:"Nasce il 28 giugno a Girgenti, in contrada Caos. Il nome del luogo sembra già un presagio."},
+  {year:"1894",title:"Il matrimonio combinato",body:"Sposa Maria Antonietta Portulano, figlia di un ricco socio del padre. Unione d'affari: la famiglia vive delle miniere di zolfo."},
+  {year:"1903",title:"Il disastro",body:"La miniera si allaga. Il patrimonio svanisce. La moglie subisce un trauma che si trasforma in una grave forma di follia. Sarà il punto di rottura."},
+  {year:"1904",title:"Il fu Mattia Pascal",body:"Pubblica il romanzo che apre la via al romanzo del Novecento. Un uomo creduto morto scopre che non si può vivere fuori dalla propria forma sociale."},
+  {year:"1921",title:"Sei personaggi",body:"Al Teatro Valle di Roma va in scena Sei personaggi in cerca d'autore. Fischi, polemiche, scandalo. Ma il teatro non sarà più lo stesso."},
+  {year:"1926",title:"Uno, nessuno e centomila",body:"Il romanzo della dissoluzione dell'io. Vitangelo Moscarda scopre che ogni sguardo altrui lo ricostruisce diverso."},
+  {year:"1934",title:"Nobel",body:"Il Premio Nobel per la Letteratura: il riconoscimento globale di un autore che aveva cercato di scomparire tra le pieghe del testo."},
+  {year:"1936",title:"Roma",body:"Muore il 10 dicembre. Per sua volontà, nessuna cerimonia. Le sue ceneri torneranno in Sicilia, sotto un pino, dentro una pietra."}
+];
+document.getElementById("timeline").innerHTML=timeline.map(t=>`
+<li class="relative">
+  <span class="absolute -left-[52px] top-1 size-5 rounded-full bg-background border-2 border-foreground"></span>
+  <div class="text-[11px] font-bold tracking-widest uppercase text-accent mb-2 tabular-nums">${t.year}</div>
+  <h4 class="font-serif text-3xl md:text-4xl font-black leading-tight mb-3">${t.title}</h4>
+  <p class="text-base leading-relaxed text-muted-foreground max-w-xl">${t.body}</p>
+</li>`).join("");
+
+const glossario=[
+  {term:"Vitalismo",body:"Dal filosofo francese Henri Bergson. La vita è un flusso incessante di trasformazioni. Ogni tentativo di fissarla in una forma statica conduce alla morte interiore."},
+  {term:"Maschera",body:"Il ruolo che la società ci impone: figlio, marito, impiegato, padre. La maschera protegge e soffoca. Dietro di essa, spesso, non c'è un volto: c'è un altro strato di recita."},
+  {term:"Incomunicabilità",body:"Impossibilità di comprenderci davvero. Ogni coscienza abita una realtà soggettiva, e le stesse parole significano cose diverse per chi le pronuncia e chi le ascolta."},
+  {term:"Uno, Nessuno, Centomila",body:"La formula della condizione moderna. Uno per sé stesso, centomila per gli altri (ognuno ci ricostruisce a modo suo), e in fondo nessuno: nessuna identità vera a cui aggrapparsi."},
+  {term:"Umorismo",body:"Non è il comico. È il comico che si rovescia in compassione grazie alla riflessione. Cogliere la dimensione dolorosa nascosta dietro l'apparenza ridicola."},
+  {term:"Forma",body:"La cristallizzazione della vita in un ruolo, un nome, un'identità legale. Senza forma non c'è società, ma dentro la forma non c'è vita."}
+];
+document.getElementById("glossario").innerHTML=glossario.map(g=>`
+<div class="bg-background p-8 md:p-10"><h4 class="font-serif text-3xl font-black mb-4">${g.term}</h4><p class="text-sm leading-relaxed text-muted-foreground">${g.body}</p></div>`).join("");
+
+const opere=[
+ {id:"mattia",num:"I",year:"1904",title:"Il fu Mattia Pascal",genere:"Romanzo · Introspezione psicologica",image:"assets/grave.jpg",
+  lede:"L'uomo che morì due volte per sfuggire a se stesso, e scoprì che non si può vivere senza forma.",
+  trama:"Mattia Pascal, bibliotecario infelice di Miragno, schiacciato da una suocera megera e da un lavoro inutile, fugge dopo la morte della figlia. A Montecarlo vince una somma enorme. Sul treno del ritorno legge sul giornale che al suo paese lo credono morto: un cadavere non identificato è stato scambiato per lui. Coglie l'occasione: cambia nome in Adriano Meis, viaggia, si reinventa. Ma senza documenti, senza identità legale, non può denunciare un furto, non può sposare la donna che ama. Simula il suicidio di Adriano Meis e torna a Miragno — dove scopre che la moglie si è risposata. Vive da allora come un fantasma, spettatore della propria tomba. \"Io sono il fu Mattia Pascal\", dice a chi gli chiede chi è.",
+  lettura:"Il romanzo che apre il Novecento italiano. Le forme sono necessarie: non siamo prigionieri delle forme, ma non possiamo farne a meno. Esistere è recitare. La libertà assoluta è vuoto. Mattia è sopravvissuto alla propria identità, senza via d'uscita.",
+  keyQuote:"Io sono il fu Mattia Pascal."},
+ {id:"uno",num:"II",year:"1926",title:"Uno, nessuno e centomila",genere:"Romanzo · Dissoluzione dell'io",image:"assets/mirror-fragments.jpg",
+  lede:"Un naso leggermente storto. Una frase della moglie. E un uomo scopre di non essere mai stato chi pensava.",
+  trama:"Vitangelo Moscarda, ricco agiato, un giorno scopre dalla moglie che il suo naso pende leggermente verso destra. Un dettaglio minuscolo che lo manda in crisi: se la sua immagine fisica non è come la credeva, allora anche la sua immagine morale — quella che gli altri gli restituiscono — potrebbe non coincidere con la sua. Inizia a interrogare chiunque, a osservarsi dall'esterno. Capisce che per ogni persona che lo conosce lui è un altro Vitangelo. È centomila, e dunque nessuno. Decide di distruggere sistematicamente tutte le \"forme\" che lo definiscono: sfratta alcuni inquilini poi dona loro una casa, chiude la banca del padre, scandalizza tutti. Finirà in manicomio, dove troverà finalmente pace: accettare di essere nessuno.",
+  lettura:"Il punto d'arrivo della ricerca pirandelliana. Se in Mattia Pascal l'identità si incrinava per caso, qui si dissolve per scelta. L'uomo può essere uno, centomila o nessuno — ma non può essere intero. L'accettazione della frammentazione è possibile solo fuori dalla società.",
+  keyQuote:"Mi sentii d'un tratto come agli altri."},
+ {id:"cosi",num:"III",year:"1917",title:"Così è (se vi pare)",genere:"Teatro · Commedia corale",image:"assets/mask-manuscript.jpg",
+  lede:"In una cittadina di provincia arriva una famiglia strana. La curiosità borghese pretende di sapere la verità. Ma la verità non c'è.",
+  trama:"In una piccola città arriva il signor Ponza con la moglie e la suocera, signora Frola. La loro vita suscita sospetti: madre e figlia non si incontrano mai, mentre Ponza visita ogni giorno la suocera. Interrogati, i due forniscono versioni opposte. Secondo la signora Frola, Ponza è un uomo perturbato che non accetta che sua figlia sia viva dopo una malattia. Secondo Ponza, la signora Frola è pazza: sua figlia è morta davvero, lui si è risposato, ma finge per pietà della vecchia. Chi dice il vero? Alla fine si presenta la signora Ponza stessa, velata. La sua risposta: \"Io sono colei che mi si crede\".",
+  lettura:"La verità non è unica né oggettiva: è plurale, soggettiva, relativa. La curiosità borghese pretende dati certi, ma Pirandello dimostra che la verità non vive nei fatti esteriori — vive nell'animo degli individui, dove resta incomunicabile. Attraverso il personaggio di Laudisi, Pirandello polemizza con il positivismo ottocentesco.",
+  keyQuote:"Io sono colei che mi si crede."},
+ {id:"sei",num:"IV",year:"1921",title:"Sei personaggi in cerca d'autore",genere:"Teatro · Metateatro",image:"assets/empty-stage.jpg",
+  lede:"Sei personaggi abbandonati dal loro autore irrompono sul palco. Vogliono che qualcuno racconti la loro storia.",
+  trama:"Durante le prove di un altro spettacolo, sul palco di un teatro irrompono sei figure: un Padre, una Madre, una Figliastra, un Figlio, due bambini. Dicono di essere personaggi rifiutati dal loro autore. Vogliono che il Capocomico metta in scena la loro storia: un dramma familiare di tradimenti, di colpe, di tragedie. Gli attori della compagnia provano a recitarla, ma la falsificano. I personaggi non si riconoscono. Il dramma si scatena davvero, sul palco, davanti al Capocomico incredulo.",
+  lettura:"Il capolavoro del teatro nel teatro. La distinzione centrale: l'uomo cambia, il personaggio resta fissato per sempre — e per questo è più reale. Il Padre afferma: \"Un uomo può non essere nessuno, ma un personaggio è sempre qualcuno\". L'opera rivoluziona il teatro del Novecento, anticipando il teatro dell'assurdo e l'incomunicabilità anche nell'arte.",
+  keyQuote:"Un uomo può non essere nessuno, ma un personaggio è sempre qualcuno."}
+];
+let active=opere[0].id;
+function renderTabs(){
+  document.getElementById("opere-tabs").innerHTML=opere.map(o=>`
+  <button data-id="${o.id}" class="tab-btn text-left border-r border-b border-border p-8 transition-colors duration-300 ${o.id===active?'active':'bg-background hover:bg-muted'}">
+    <div class="flex justify-between items-baseline mb-6">
+      <span class="font-serif text-4xl font-black italic opacity-30">${o.num}</span>
+      <span class="text-[10px] font-semibold tracking-widest tabular-nums">${o.year}</span>
+    </div>
+    <h4 class="font-serif text-xl md:text-2xl font-black leading-tight mb-3 text-balance">${o.title}</h4>
+    <p class="text-[11px] tracking-widest uppercase ${o.id===active?'opacity-70':'text-muted-foreground'}">${o.genere}</p>
+  </button>`).join("");
+  document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.id;renderTabs();renderCurrent();}));
+}
+function renderCurrent(){
+  const c=opere.find(o=>o.id===active);
+  document.getElementById("opera-current").innerHTML=`
+  <div class="grid grid-cols-12 border-b border-border reveal">
+    <div class="col-span-12 lg:col-span-6 border-r border-border">
+      <img src="${c.image}" alt="Evocazione visiva di ${c.title}" class="w-full aspect-[4/5] object-cover grayscale">
+    </div>
+    <div class="col-span-12 lg:col-span-6 p-10 md:p-16 flex flex-col justify-between gap-12">
+      <div>
+        <p class="text-[11px] font-bold tracking-[0.4em] uppercase mb-6 text-accent">${c.genere} · ${c.year}</p>
+        <h3 class="font-serif text-5xl md:text-7xl font-black leading-[0.9] mb-8 text-balance">${c.title}</h3>
+        <p class="font-italic text-2xl leading-snug text-pretty text-muted-foreground">${c.lede}</p>
+      </div>
+      <div class="border-t-2 border-foreground pt-6"><p class="font-italic text-xl leading-snug">«${c.keyQuote}»</p></div>
+    </div>
+  </div>
+  <div class="px-6 py-20">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-12">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="flex items-center gap-4 mb-12"><span class="font-serif text-4xl font-black text-muted-foreground/30">§1</span><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">La trama</span></div>
+        <p class="font-serif text-lg md:text-xl leading-relaxed" style="text-indent:0">${c.trama}</p>
+      </div>
+      <aside class="col-span-12 lg:col-span-4 lg:col-start-9">
+        <div class="flex items-center gap-4 mb-12"><span class="font-serif text-4xl font-black text-muted-foreground/30">§2</span><div class="flex-1 h-px bg-border"></div><span class="text-[11px] font-bold tracking-[0.3em] uppercase">Chiave di lettura</span></div>
+        <div class="bg-foreground text-background p-8 md:p-10"><p class="font-serif text-base leading-relaxed">${c.lettura}</p></div>
+      </aside>
+    </div>
+  </div>`;
+}
+renderTabs();renderCurrent();
+</script>
+</body>
+</html>
